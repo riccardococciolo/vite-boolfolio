@@ -12,10 +12,14 @@ export default {
     }
   },
   created() {
-    axios.get('${this.baseUrl}')
+    axios.get(`${this.baseUrl}`)
     .then((resp) => {
-      this.projects = resp.data.results.data;
+      console.log(resp)
+      this.projects = resp.data.results;
     })
+    .catch(error => {
+    console.error(error);
+  });
   },
   components: { ProjectCard }
 }
