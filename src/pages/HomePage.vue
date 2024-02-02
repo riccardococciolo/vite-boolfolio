@@ -1,6 +1,6 @@
 <script>
 import axios from 'axios';
-import ProjectCard from './ProjectCard.vue';
+import ProjectCard from '../components/ProjectCard.vue';
 
 
 
@@ -28,7 +28,7 @@ export default {
 <template>
   <div class="container">
     <h1>Lista dei Progetti</h1>
-    <div class="row-cols-4">
+    <div class="row row-cols-3 g-5">
       <div class="col" v-for="project in projects" :key="project.id">
         <ProjectCard :project="project" />
       </div>
@@ -37,5 +37,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+h1 {
+  color: white;
+}
   
 </style>

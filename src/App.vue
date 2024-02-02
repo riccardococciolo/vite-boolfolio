@@ -1,5 +1,5 @@
 <script>
-import AppMain from './components/AppMain.vue';
+import AppHeader from './components/AppHeader.vue';
 
 export default {
   data() {
@@ -7,14 +7,16 @@ export default {
       
     }
   },
-  components: {AppMain},
+  components: { AppHeader },
 }
 </script>
 
 <template>
-  <AppMain />
+  <AppHeader />
+
+  <router-view></router-view>
 </template>
 
 <style lang="scss">
-@use "./components/styles/general.scss"
+@use "./styles/general.scss";
 </style>
