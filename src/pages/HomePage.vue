@@ -43,6 +43,9 @@ export default {
 <template>
   <div class="container">
     <h1>Lista dei Progetti</h1>
+    <div class="my-3 text-light fs-3">
+      Progetti trovati: {{ total }}
+    </div>
     <div class="row row-cols-3 g-5">
       <div class="col" v-for="project in projects" :key="project.id">
         <ProjectCard :project="project" />

@@ -15,7 +15,11 @@ export default {
       .get(`${this.baseUrl}/${this.$route.params.slug}`)
       .then((resp) => {
         console.log(resp);
-        this.curProject = resp.data.results
+        if (resp.data.success) {
+          this.curProject = resp.data.results
+        } else {
+          this.$router.push({name: 'not-found'})
+        }
       })
       .finally(() => {
         this.loading = false;
